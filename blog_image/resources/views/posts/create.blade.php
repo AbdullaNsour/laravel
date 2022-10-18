@@ -1,9 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add Blog Post Form - Laravel 9 CRUD with Image Upload Tutorial</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <style>
+        body, .form-control{
+            background-color: rgb(8, 8, 8);
+            color: white;
+            border-color: brown
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-2">

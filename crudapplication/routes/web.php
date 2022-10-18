@@ -17,11 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/', function () {
+//     return view('pages.index');
+// });
+Route::resource('add_movie', PageCRUDController::class);
 Route::resource('pages', PageCRUDController::class);
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+// Route::get('add_movie', function () {
+//     return view('pages.add_movie');
+// });
+
 Route::get('anime-details', function () {
     return view('pages.anime-details');
 });

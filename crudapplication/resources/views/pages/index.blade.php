@@ -1,113 +1,60 @@
-
-@extends('pages.layout.master')
+@extends('post.layout.master')
 @section('content')
     <!-- Hero Section Begin -->
     <section class="hero">
 
 
-<title>Laravel 9 CRUD Tutorial</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-</head>
-<body>
-<div class="container mt-2">
-<div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Laravel 9 Post CRUD Tutorial</h2>
-            </div>
-            <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('pages.create') }}"> Create New Post</a>
-            </div>
-        </div>
-    </div>
+
+
+                <div class="container">
+                    <div class="hero__slider owl-carousel">
+                        <div class="hero__items set-bg" data-setbg="img/hero/netf.jpg" style="height: 250px">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="hero__text">
+                                        {{-- <div class="label">Adventure</div> --}}
+                                        <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                                        {{-- <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
    
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
-   
-    <table class="table table-bordered">
-        <tr>
-            {{-- <th>S.No</th> --}}
-            <th>Image</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th width="280px">Action</th>
-        </tr>
-        @foreach ($pages as $page)
-        <tr>
-            {{-- <td>{{ $page->id }}</td> --}}
-            <td><img src="{{ Storage::url($page->image) }}" height="150" width="100" alt="" /></td>
-            <td>{{ $page->title }}</td>
-            <td>{{ $page->description }}</td>
-            <td>
-                <form action="{{ route('pages.destroy',$page->id) }}" method="POST">
+                    </div>
+
+                    <table class="table table-bordered text-white">
+                        <tr>
+                            {{-- <th>S.No</th> --}}
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            {{-- <th width="280px">Action</th> --}}
+                        </tr>
+                        @foreach ($pages as $page)
+                            <tr>
+                                {{-- <td>{{ $page->id }}</td> --}}
+                                <td><img src="{{ Storage::url($page->image) }}" height="150" width="100" alt="" />
+                                </td>
+                                <td>{{ $page->title }}</td>
+                                <td>{{ $page->description }}</td>
+                                {{-- <td>
+                                    <form action="{{ route('pages.destroy', $page->id) }}" method="POST">
     
-                    <a class="btn btn-primary" href="{{ route('pages.edit',$page->id) }}">Edit</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-  
-    {!! $pages->links() !!}
+                                        <a class="btn btn-primary" href="{{ route('pages.edit', $page->id) }}">Edit</a>
+    
+                                        @csrf
+                                        @method('DELETE')
+    
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td> --}}
+                            </tr>
+                        @endforeach
+                    </table>
 
 
-
-
-
-
-
-
-
-
-
-        <div class="container">
-            <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="img/hero/netf.jpg">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- Hero Section End -->
 
@@ -579,99 +526,98 @@
                             </ul>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years"
-                                data-setbg="img/sidebar/tv-1.jpg">
-                                <div class="ep">18 / ?</div>
-                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                                    data-setbg="img/sidebar/tv-1.jpg">
+                                    <div class="ep">18 / ?</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                                </div>
+                                <div class="product__sidebar__view__item set-bg mix month week"
+                                    data-setbg="img/sidebar/tv-2.jpg">
+                                    <div class="ep">18 / ?</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                </div>
+                                <div class="product__sidebar__view__item set-bg mix week years"
+                                    data-setbg="img/sidebar/tv-3.jpg">
+                                    <div class="ep">18 / ?</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                                </div>
+                                <div class="product__sidebar__view__item set-bg mix years month"
+                                    data-setbg="img/sidebar/tv-4.jpg">
+                                    <div class="ep">18 / ?</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                                </div>
+                                <div class="product__sidebar__view__item set-bg mix day"
+                                    data-setbg="img/sidebar/tv-5.jpg">
+                                    <div class="ep">18 / ?</div>
+                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                                </div>
                             </div>
-                            <div class="product__sidebar__view__item set-bg mix month week"
-                            data-setbg="img/sidebar/tv-2.jpg">
-                            <div class="ep">18 / ?</div>
-                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                         </div>
-                        <div class="product__sidebar__view__item set-bg mix week years"
-                        data-setbg="img/sidebar/tv-3.jpg">
-                        <div class="ep">18 / ?</div>
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                        <div class="product__sidebar__comment">
+                            <div class="section-title">
+                                <h5>New Comment</h5>
+                            </div>
+                            <div class="product__sidebar__comment__item">
+                                <div class="product__sidebar__comment__item__pic">
+                                    <img src="img/sidebar/comment-1.jpg" alt="">
+                                </div>
+                                <div class="product__sidebar__comment__item__text">
+                                    <ul>
+                                        <li>Active</li>
+                                        <li>Movie</li>
+                                    </ul>
+                                    <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                                </div>
+                            </div>
+                            <div class="product__sidebar__comment__item">
+                                <div class="product__sidebar__comment__item__pic">
+                                    <img src="img/sidebar/comment-2.jpg" alt="">
+                                </div>
+                                <div class="product__sidebar__comment__item__text">
+                                    <ul>
+                                        <li>Active</li>
+                                        <li>Movie</li>
+                                    </ul>
+                                    <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
+                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                                </div>
+                            </div>
+                            <div class="product__sidebar__comment__item">
+                                <div class="product__sidebar__comment__item__pic">
+                                    <img src="img/sidebar/comment-3.jpg" alt="">
+                                </div>
+                                <div class="product__sidebar__comment__item__text">
+                                    <ul>
+                                        <li>Active</li>
+                                        <li>Movie</li>
+                                    </ul>
+                                    <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
+                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                                </div>
+                            </div>
+                            <div class="product__sidebar__comment__item">
+                                <div class="product__sidebar__comment__item__pic">
+                                    <img src="img/sidebar/comment-4.jpg" alt="">
+                                </div>
+                                <div class="product__sidebar__comment__item__text">
+                                    <ul>
+                                        <li>Active</li>
+                                        <li>Movie</li>
+                                    </ul>
+                                    <h5><a href="#">Monogatari Series: Second Season</a></h5>
+                                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__sidebar__view__item set-bg mix years month"
-                    data-setbg="img/sidebar/tv-4.jpg">
-                    <div class="ep">18 / ?</div>
-                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                    <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                 </div>
-                <div class="product__sidebar__view__item set-bg mix day"
-                data-setbg="img/sidebar/tv-5.jpg">
-                <div class="ep">18 / ?</div>
-                <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                <h5><a href="#">Fate stay night unlimited blade works</a></h5>
             </div>
         </div>
-    </div>
-    <div class="product__sidebar__comment">
-        <div class="section-title">
-            <h5>New Comment</h5>
-        </div>
-        <div class="product__sidebar__comment__item">
-            <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/comment-1.jpg" alt="">
-            </div>
-            <div class="product__sidebar__comment__item__text">
-                <ul>
-                    <li>Active</li>
-                    <li>Movie</li>
-                </ul>
-                <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-            </div>
-        </div>
-        <div class="product__sidebar__comment__item">
-            <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/comment-2.jpg" alt="">
-            </div>
-            <div class="product__sidebar__comment__item__text">
-                <ul>
-                    <li>Active</li>
-                    <li>Movie</li>
-                </ul>
-                <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
-                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-            </div>
-        </div>
-        <div class="product__sidebar__comment__item">
-            <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/comment-3.jpg" alt="">
-            </div>
-            <div class="product__sidebar__comment__item__text">
-                <ul>
-                    <li>Active</li>
-                    <li>Movie</li>
-                </ul>
-                <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
-                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-            </div>
-        </div>
-        <div class="product__sidebar__comment__item">
-            <div class="product__sidebar__comment__item__pic">
-                <img src="img/sidebar/comment-4.jpg" alt="">
-            </div>
-            <div class="product__sidebar__comment__item__text">
-                <ul>
-                    <li>Active</li>
-                    <li>Movie</li>
-                </ul>
-                <h5><a href="#">Monogatari Series: Second Season</a></h5>
-                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Product Section End -->
-
+    </section>
+    <!-- Product Section End -->
 @endsection

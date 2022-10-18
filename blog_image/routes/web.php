@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::resource('posts.home', HomeController::class);
 Route::resource('posts', PostCRUDController::class);
